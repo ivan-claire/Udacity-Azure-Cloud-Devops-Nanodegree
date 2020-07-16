@@ -9,8 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Hadolint Action
-      uses: brpaz/hadolint-action@v1.1.0
+    - name: hadolint on pr
+      uses: burdzwastaken/hadolint-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HADOLINT_ACTION_DOCKERFILE_FOLDER: .
     - name: Set up Python 3.5
       uses: actions/setup-python@v1
       with:
