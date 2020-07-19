@@ -57,6 +57,7 @@ def predict():
 
 
     json_payload = request.json
+    #LOG.info(f"foo: {json_payload}")
     LOG.info(f"JSON payload: {json_payload}")
     #LOG.info("JSON Payload: json_payload"))
     inference_payload = pd.DataFrame(json_payload)
