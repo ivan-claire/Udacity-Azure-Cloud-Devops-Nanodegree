@@ -5,29 +5,43 @@
 
 trigger:
 - master
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: |
-    echo setting up python
-  displayName: 'Setup Python 3.6'
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.6'
-- script: |
-    make install
-  displayName: 'Install dependencies'  
-- script: |
-    make lint
-  displayName: 'Linting with pylint'
-- script: |
-    make test
-  displayName: 'Test with pytest'
-# deploy to Azure Web App production
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'flaskappconnection'
-    appName: 'mflaskapp'
-    appType: webApp
+jobs:
+- job: buildandtest
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: |
+      echo setting up python
+    displayName: 'Setup Python 3.6'
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.6'
+  - script: |
+      make install
+    displayName: 'Install dependencies'  
+  - script: |
+      make lint
+    displayName: 'Linting with pylint'
+  - script: |
+      make test
+    displayName: 'Test with pytest'
+    # publish an artifact called drop
+  - task: PublishBuildArtifacts@1
+    inputs:
+      artifactName: drop
+- job: deploy
+  pool:
+    vmImage: 'ubuntu-16.04'      
+    dependsOn: buildandtest
+  condition: succeeded()
+  steps:
+  # download the artifact drop from the previous job
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      artifactName: drop
+  # deploy to Azure Web App production
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: 'flaskappconnection'
+      appName: 'mflaskapp'
+      appType: webApp
