@@ -26,6 +26,10 @@ jobs:
       make test
     displayName: 'Test with pytest'
     # publish an artifact called drop
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: $(Build.SourcesDirectory)
+      targetFolder: $(Build.ArtifactStagingDirectory)
   - task: PublishBuildArtifacts@1
     inputs:
       pathToPublish: '$(Build.ArtifactStagingDirectory)'
