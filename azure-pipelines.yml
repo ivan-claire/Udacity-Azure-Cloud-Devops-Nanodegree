@@ -28,6 +28,7 @@ jobs:
     # publish an artifact called drop
   - task: PublishBuildArtifacts@1
     inputs:
+      pathToPublish: '$(Build.ArtifactStagingDirectory)'
       artifactName: drop
 - job: deploy
   pool:
@@ -39,6 +40,7 @@ jobs:
   - task: DownloadBuildArtifacts@0
     inputs:
       artifactName: drop
+      downloadPath: '$(Build.ArtifactStagingDirectory)'
   # deploy to Azure Web App production
   - task: AzureWebApp@1
     inputs:
