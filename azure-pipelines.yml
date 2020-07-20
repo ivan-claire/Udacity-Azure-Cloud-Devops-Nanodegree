@@ -25,3 +25,8 @@ steps:
 - script: |
     make test
   displayName: 'Test with pytest'
+# deploy to Azure Web App production
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'ivan-claire'
+    appName: 'mflaskapp'
