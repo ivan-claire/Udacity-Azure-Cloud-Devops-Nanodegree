@@ -30,3 +30,4 @@ steps:
   inputs:
     azureSubscription: 'ivan-claire'
     appName: 'mflaskapp'
+    appType: webApp
