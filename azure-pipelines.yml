@@ -52,3 +52,4 @@ jobs:
       appName: 'mflaskapp'
       appType: webApp
       package: '$(Build.ArtifactStagingDirectory)'
+      startUpCommand: python3 app.py
