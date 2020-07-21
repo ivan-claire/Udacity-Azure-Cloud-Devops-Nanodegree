@@ -51,5 +51,4 @@ jobs:
       azureSubscription: 'flaskappconnection'
       appName: 'mflaskapp'
       appType: webApp
-      package: '$(build.ArtifactStagingDirectory)/**/*.zip'
-     #package: '$(Build.ArtifactStagingDirectory)'
+      package: '$(Build.ArtifactStagingDirectory)'
