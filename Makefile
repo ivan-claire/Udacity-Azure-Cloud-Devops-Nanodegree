@@ -4,7 +4,7 @@ setup:
 install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
-	docker pull hadolint/hadolint
+	#docker pull hadolint/hadolint
 
 test:
 	#python -m pytest -vv --cov=myrepolib tests/*.py
