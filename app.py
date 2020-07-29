@@ -64,6 +64,7 @@ def predict():
     LOG.info(f"inference payload DataFrame: {inference_payload}")
     #LOG.info("interence Payload Dataframe: inference_payload")
     scaled_payload = scale(inference_payload)
+    clf = joblib.load("boston_housing_prediction.joblib")
     prediction = list(clf.predict(scaled_payload))
     return jsonify({'prediction': prediction})
 
