@@ -59,7 +59,7 @@ Scalable because users can configure the number of virtual machines they want to
     Set the client_id,client_secret and tenant_id as environment variables or copy them into a file say packer-vars.json and run the following command to create and deploy your image to azure.
     
         packer build -var-file packer-vars.json server.json
-        ```
+        
  3. Customize terraform IaaS code and Deploy
     In the terrafom.tfvars file, the vm_count variable can be modified to the number of virtual machines you want created. By default, 2 VMs are created.
     Also, in this file, provide the client id, secret and other required information.
@@ -69,17 +69,17 @@ Scalable because users can configure the number of virtual machines they want to
         $ terraform init
         $ terraform plan 
         $ terrafrom apply --auto-approve
-        ```
+        
  4. Destroy Infrastructure
     When you are done using the infrastructure, destroy it using the command
       
         terrafrom apply --auto-approve
-        ```
+       
     
 ### Output
 #### Below is a screenshot of what to expect after running the building and deploying your packer image to azure.
-![alt packer image in azure (https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/02PackerImageinAzure.png)
+![alt packer image in azure](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/02PackerImageinAzure.png)
 
 #### Below is a screenshot of the results of the terraform apply command
-![alt resources provisioned (https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/04TerraformApplyDone.png)
+![alt resources provisioned](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/04TerraformApplyDone.png)
 
