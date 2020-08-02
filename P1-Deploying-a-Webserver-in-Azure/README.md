@@ -40,7 +40,7 @@ Scalable because users can configure the number of virtual machines they want to
         ```
     - Create an azure service principal for terraform using the command 
         ` az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, tenant_id: tenant }"`. You should get an output similar to:
-            ```
+         ```
         {
             "client_id": "xxxxxxxxxxxxxxxxxxxx",
             "client_secret": "xxxxxxxxxxxxxxxxxxx",
@@ -57,31 +57,29 @@ Scalable because users can configure the number of virtual machines they want to
         ```
  2. Create and Deploy virtual machine Image to Azure using Packer.
     Set the client_id,client_secret and tenant_id as environment variables or copy them into a file say packer-vars.json and run the following command to create and deploy your image to azure.
-        ```
+    
         packer build -var-file packer-vars.json server.json
-
         ```
  3. Customize terraform IaaS code and Deploy
     In the terrafom.tfvars file, the vm_count variable can be modified to the number of virtual machines you want created. By default, 2 VMs are created.
     Also, in this file, provide the client id, secret and other required information.
     Run the following commands to deploy your infrastructure:
     first you initialise your terraform state, then get the plan of the resources that are to be deployed and finally run the apply command to create those resources on azure
-        ```
+       
         $ terraform init
         $ terraform plan 
         $ terrafrom apply --auto-approve
         ```
  4. Destroy Infrastructure
     When you are done using the infrastructure, destroy it using the command
-        ```
+      
         terrafrom apply --auto-approve
-
         ```
     
 ### Output
-Below is a screenshot of what to expect after running the packer build command
-**Your words here**
+#### Below is a screenshot of what to expect after running the building and deploying your packer image to azure.
+![alt packer image in azure (https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/02PackerImageinAzure.png)
 
-
-Below is a screenshot of the results of the terraform apply command
+#### Below is a screenshot of the results of the terraform apply command
+![alt resources provisioned (https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P1-Deploying-a-Webserver-in-Azure/ScreenShots/04TerraformApplyDone.png)
 
