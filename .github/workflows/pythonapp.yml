@@ -13,12 +13,16 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.6
+      
     - name: Install dependencies
+      working-directory: P2-Deploying-CICD-Pipeline-in-Azure
       run: |
         make install
     - name: Lint with pylint
+      working-directory: P2-Deploying-CICD-Pipeline-in-Azure
       run: |
         make lint
     - name: Test with pytest
+      working-directory: P2-Deploying-CICD-Pipeline-in-Azure
       run: |
         make test
