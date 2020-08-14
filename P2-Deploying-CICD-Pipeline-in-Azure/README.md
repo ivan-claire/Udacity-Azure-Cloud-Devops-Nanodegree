@@ -1,12 +1,19 @@
-# Overview
+# Overview of Building a CI/CD Pipeline
+A github repo is built from scratch and a scaffolding (a project generation technique supported by various tools>Github Actions, Azure Pipelines etc) is created with the goal of performing Continous integration and Continous Delivery.
+The app is a python based machine learning app using the flask web framework to operationalize a machine learning microservice API.
+Using a pre-trained , sklearn model, it serves out predictions through API calls about house prices in Boston according to several features like average rooms in a home etc 
 
-<TODO: complete this with an overview of your project>
+It was broken into 2 parts:
+- Github Actions was used along with Makefile,requirements.txt and application code written to perform initial lint, test and install cycle.
+- The project was then integrated with Azure Pipelines to enable CD to Azure App Service.
+
 
 ## Project Plan
-<TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* Trello board for the project
+   https://trello.com/b/G8h4Gzxc/building-a-cicd-pipeline
+* Link to a spreadsheet
+  https://docs.google.com/spreadsheets/d/1u2_x9ZGDcb9WS20XVNg2LHHwdFDauffIb3dVlpIkN24/edit?usp=sharing
 
 ## Instructions
 
