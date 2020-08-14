@@ -52,8 +52,8 @@ jobs:
   # deploy to Azure Web App production
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: 'flaskappconnection'
-      appName: 'mflaskapp'
+      azureSubscription: 'flaskappconnections'
+      appName: 'mflaskapps'
       appType: webApp
       package: '$(Build.ArtifactStagingDirectory)'
       startUpCommand: python3 app.py
