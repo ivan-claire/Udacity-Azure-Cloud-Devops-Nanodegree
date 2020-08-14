@@ -8,16 +8,16 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '380bc025-3654-412b-834e-aa46defd8165'
-  
+  #azureServiceConnectionId: '380bc025-3654-412b-834e-aa46defd8165'
+   azureServiceConnectionId: 'flaskappconnections'
   # Web app name
-  webAppName: 'mflaskapp'
+  webAppName: 'mflaskapps'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'mflaskapp'
+  environmentName: 'mflaskapps'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
