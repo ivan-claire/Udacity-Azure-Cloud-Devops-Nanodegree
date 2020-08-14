@@ -32,7 +32,7 @@ jobs:
     # publish an artifact called drop
   - task: CopyFiles@2
     inputs:
-      sourceFolder: $(Build.SourcesDirectory)
+      sourceFolder: $(Build.SourcesDirectory)/P2-Deploying-CICD-Pipeline-in-Azure
       targetFolder: $(Build.ArtifactStagingDirectory)
   - task: PublishBuildArtifacts@1
     inputs:
