@@ -13,18 +13,22 @@ jobs:
   - script: |
       echo setting up python
     displayName: 'Setup Python 3.6'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '3.6'
   - script: |
       make install
     displayName: 'Install dependencies'  
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
   - script: |
       make lint
     displayName: 'Linting with pylint'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
   - script: |
       make test
     displayName: 'Test with pytest'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
     # publish an artifact called drop
   - task: CopyFiles@2
     inputs:
