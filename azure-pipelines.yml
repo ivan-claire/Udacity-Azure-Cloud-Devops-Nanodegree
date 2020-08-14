@@ -1,0 +1,59 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+jobs:
+- job: buildandtest
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: |
+      echo setting up python
+    displayName: 'Setup Python 3.6'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.6'
+  - script: |
+      make install
+    displayName: 'Install dependencies'  
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
+  - script: |
+      make lint
+    displayName: 'Linting with pylint'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
+  - script: |
+      make test
+    displayName: 'Test with pytest'
+    workingDirectory: P2-Deploying-CICD-Pipeline-in-Azure
+    # publish an artifact called drop
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: $(Build.SourcesDirectory)
+      targetFolder: $(Build.ArtifactStagingDirectory)
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: drop
+- job: deploy
+  pool:
+    vmImage: 'ubuntu-16.04'      
+  dependsOn: buildandtest
+  condition: succeeded()
+  steps:
+  # download the artifact drop from the previous job
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      artifactName: drop
+      downloadPath: '$(Build.ArtifactStagingDirectory)'
+  # deploy to Azure Web App production
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: 'flaskappconnection'
+      appName: 'mflaskapp'
+      appType: webApp
+      package: '$(Build.ArtifactStagingDirectory)'
+      startUpCommand: python3 app.py
