@@ -74,7 +74,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          
           - task: UsePythonVersion@0
             inputs:
               versionSpec: '$(pythonVersion)'
