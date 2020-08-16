@@ -70,7 +70,6 @@ To run this code,
 - Deploy containerized app to kubernetes (AKS service)
 
 ## Demo 
-[![Demo CI/CD Project in Azure](https://img.youtube.com/vi/oVk7WUV24Ew/0.jpg)](http://www.youtube.com/watch?v=oVk7WUV24Ew)
-https://youtu.be/oVk7WUV24Ew
+[![Demo CI/CD Project in Azure](https://img.youtube.com/vi/nRxE1c_4e8g/0.jpg)](http://www.youtube.com/watch?v=nRxE1c_4e8g)
 
 
