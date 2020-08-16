@@ -49,10 +49,13 @@ To run this code,
 ![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/ClonedCode.PNG)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
-![Project running on Azure App Service]https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/Makefile%20tests.PNG)
+![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/MakeallGithubActions.PNG)
+
+* Output of a test run
+![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/Makefile%20tests.PNG)
 
 * Successful run of the project in Azure Pipelines
-![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/SuccessfulRuninAzurePipelines.PNG)
+![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/azurepipelines.PNG)
 
 * Running Azure App Service
 ![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/ClonedCode.PNG)
@@ -67,8 +70,7 @@ To run this code,
 - Deploy containerized app to kubernetes (AKS service)
 
 ## Demo 
-<video width="320" height="240" controls>
-  <source src="https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/cicddemo.mp4" type="video/mp4">
-</video>
+[![Demo CI/CD Project in Azure](https://img.youtube.com/vi/oVk7WUV24Ew/0.jpg)](http://www.youtube.com/watch?v=oVk7WUV24Ew)
+https://youtu.be/oVk7WUV24Ew
 
 
