@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/.github/workflows/pythonapp.yml/badge.svg)](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/actions)
+[![Actions Status](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/workflows/pythonapp/badge.svg)](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/actions)
 # Overview of Building a CI/CD Pipeline
 A github repo is built from scratch and a scaffolding (a project generation technique supported by various tools like Github Actions, Azure Pipelines, Azure cloud shell etc) is created with the goal of performing Continous integration and Continous Delivery.
 The app is a python based machine learning app using the flask web framework to operationalize a machine learning microservice API.
