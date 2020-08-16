@@ -25,6 +25,6 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-      -X POST https://mflaskapp.azurewebsites.net/predict
+      -X POST https://mflaskapps.azurewebsites.net/predict
 #     -X POST http://localhost:$PORT/predict
 
