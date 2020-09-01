@@ -55,6 +55,9 @@ To run this code,
 * Output of a test run
 ![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/Makefile%20tests.PNG)
 
+* Locust Tests
+![Locust Tests Running](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/locustTests/3.PNG)
+
 * Successful run of the project in Azure Pipelines
 ![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/azurepipelines.PNG)
 
@@ -63,6 +66,7 @@ To run this code,
 
 * Successful prediction from deployed flask app in Azure Cloud Shell> 
 ![Project running on Azure App Service](https://github.com/ivan-claire/Udacity-Azure-Cloud-Devops-Nanodegree/blob/master/P2-Deploying-CICD-Pipeline-in-Azure/Screenshots/predictionResults.PNG)
+
 
 ## Enhancements
 
